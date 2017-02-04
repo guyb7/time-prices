@@ -5,7 +5,7 @@ A Chrome extension that shows a tooltip when hovering over prices with the time 
 TODO
 
 ## Demo
-[Demo page here](https://guyb7.github.io/time-prices/)
+[Demo page here](https://guyb7.github.io/time-prices/index.html)
 
 Screenshots:
 
