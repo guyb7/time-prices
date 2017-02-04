@@ -1,4 +1,6 @@
 # TimePrices
+![Time Prices Screenshot](./dist/icons/icon128.png)
+
 A Chrome extension that shows a tooltip when hovering over prices with the time that will take you to earn that amount.
 
 ## Install the extension
