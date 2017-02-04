@@ -1,0 +1,196 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+h3 {
+  font-weight: 100;
+}
+
+/* LAYOUT CSS */
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+#layout {
+  padding: 0;
+}
+
+.header {
+  padding: 20px;
+  text-align: left;
+}
+
+.sidebar {
+  background: rgb(61, 79, 93);
+  color: #fff;
+}
+
+.brand-title,
+.brand-tagline {
+  margin: 0;
+}
+.brand-tagline {
+  font-weight: 300;
+  color: rgb(176, 202, 219);
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-item {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+.nav-item a {
+  background: transparent;
+  border: 2px solid rgb(176, 202, 219);
+  color: #fff;
+  margin-top: 1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+  border: 2px solid rgb(61, 146, 201);
+  text-decoration: none;
+}
+
+.content-subhead {
+  text-transform: uppercase;
+  color: #aaa;
+  border-bottom: 1px solid #eee;
+  padding: 0.4em 0;
+  font-size: 80%;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.content {
+  padding: 2em 1em 0;
+}
+
+.post {
+  max-width: 600px;
+  padding-bottom: 2em;
+}
+.post-title {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 0.2em;
+}
+.post-avatar {
+  border-radius: 50px;
+  float: right;
+  margin-left: 1em;
+}
+.post-description {
+  color: #444;
+  line-height: 1.8em;
+}
+.post-meta {
+  color: #999;
+  font-size: 90%;
+  margin: 0;
+}
+
+.post-category {
+  margin: 0 0.1em;
+  padding: 0.3em 1em;
+  color: #fff;
+  background: #999;
+  font-size: 80%;
+}
+  .post-category-design {
+      background: #5aba59;
+  }
+  .post-category-pure {
+      background: #4d85d1;
+  }
+  .post-category-yui {
+      background: #8156a7;
+  }
+  .post-category-js {
+      background: #df2d4f;
+  }
+
+.post-images {
+  margin: 1em 0;
+}
+.post-image-meta {
+  margin-top: -3.5em;
+  margin-left: 1em;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
+}
+
+.footer {
+  padding: 1em 0;
+}
+.footer a {
+  color: #ccc;
+  font-size: 80%;
+}
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+  background: none;
+}
+
+.hidden-mobile, .hidden {
+  display: none;
+}
+
+.success-icon {
+  color: rgb(28, 184, 65);
+  padding: 6px;
+}
+
+@media (min-width: 48em) {
+  .content {
+    padding: 2em 3em 0;
+    margin-left: 25%;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    max-width: 300px;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .hidden-mobile {
+    display: block;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Amazon */
+#amazon-item-DIV_2,#amazon-item-LI_1{height:461px;width:312.33px;perspective-origin:156.16px 230.5px;transform-origin:156.16px 230.5px}#amazon-item-DIV_2,#amazon-item-DIV_3,#amazon-item-LI_1{font:normal normal normal normal 13px/16.25px Arial,sans-serif;box-sizing:border-box;overflow-wrap:break-word}#amazon-item-DIV_2,#amazon-item-DIV_3,#amazon-item-DIV_4,#amazon-item-LI_1{text-size-adjust:100%;word-wrap:break-word}#amazon-item-DIV_11,#amazon-item-DIV_12{perspective-origin:149.16px 94.5px;transform-origin:149.16px 94.5px;height:189px}#amazon-item-A_18,#amazon-item-A_5,#amazon-item-A_50,#amazon-item-A_62,#amazon-item-A_70{text-decoration:none}#amazon-item-DIV_16,#amazon-item-DIV_17,#amazon-item-DIV_19{height:23px;width:160px;perspective-origin:80px 11.5px;transform-origin:80px 11.5px}#amazon-item-DIV_30,#amazon-item-DIV_4,#amazon-item-DIV_46{height:22px;perspective-origin:149.16px 11px;transform-origin:149.16px 11px}#amazon-item-SUP_34,#amazon-item-SUP_36{height:12px;vertical-align:top;position:relative}#amazon-item-SPAN_38,#amazon-item-SPAN_57{text-decoration:line-through}#amazon-item-DIV_58,#amazon-item-DIV_61{height:16px;transform-origin:149.16px 8px}#amazon-item-DIV_11,#amazon-item-DIV_12,#amazon-item-DIV_3,#amazon-item-DIV_4{width:298.33px;outline:#949494 0;color:#949494;column-rule-color:#949494;border:0 #949494}#amazon-item-I_67,#amazon-item-SPAN_68{bottom:0;height:18px;left:0;right:0;top:0;width:80px;perspective-origin:40px 9px}#amazon-item-I_67,#amazon-item-I_69{display:inline-block;vertical-align:text-top}#amazon-item-LI_1{bottom:0;color:#949494;display:inline-block;left:0;max-width:1250px;position:relative;right:0;top:0;vertical-align:top;column-rule-color:#949494;border:0 #949494;outline:#949494 0;overflow:hidden}#amazon-item-DIV_2{color:#949494;text-align:left;column-rule-color:#949494;border-top:1px solid #ddd;border-right:0 none #949494;border-bottom:0 none #949494;border-left:0 none #949494;outline:#949494 0;padding:7px}#amazon-item-DIV_3{height:30px;text-align:left;perspective-origin:149.16px 15px;transform-origin:149.16px 15px}#amazon-item-DIV_11:after,#amazon-item-DIV_22:after,#amazon-item-DIV_23:after,#amazon-item-DIV_26:after,#amazon-item-DIV_29:after,#amazon-item-DIV_30:after,#amazon-item-DIV_3:after,#amazon-item-DIV_42:after,#amazon-item-DIV_43:after,#amazon-item-DIV_46:after,#amazon-item-DIV_47:after,#amazon-item-DIV_49:after,#amazon-item-DIV_4:after,#amazon-item-DIV_58:after,#amazon-item-DIV_59:after,#amazon-item-DIV_61:after,#amazon-item-DIV_63:after{clear:both;color:#949494;content:'""';display:table;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;column-rule-color:#949494;border:0 #949494;font:normal normal normal normal 0/0 Arial,sans-serif;outline:#949494 0}#amazon-item-DIV_11:before,#amazon-item-DIV_22:before,#amazon-item-DIV_23:before,#amazon-item-DIV_26:before,#amazon-item-DIV_29:before,#amazon-item-DIV_30:before,#amazon-item-DIV_3:before,#amazon-item-DIV_42:before,#amazon-item-DIV_43:before,#amazon-item-DIV_46:before,#amazon-item-DIV_47:before,#amazon-item-DIV_49:before,#amazon-item-DIV_4:before,#amazon-item-DIV_58:before,#amazon-item-DIV_59:before,#amazon-item-DIV_61:before,#amazon-item-DIV_63:before{color:#949494;content:'""';display:table;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;column-rule-color:#949494;border:0 #949494;font:normal normal normal normal 0/0 Arial,sans-serif;outline:#949494 0}#amazon-item-DIV_4{box-sizing:border-box;overflow-wrap:break-word;text-align:left;font:normal normal normal normal 13px/16.25px Arial,sans-serif;margin:4px 0}#amazon-item-A_5,#amazon-item-A_50,#amazon-item-A_62,#amazon-item-A_70,#amazon-item-SPAN_6{box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 12px/15px Arial,sans-serif;border:0 #0066c0;color:#0066c0;column-rule-color:#0066c0;outline:#0066c0 0}#amazon-item-SPAN_6{display:block;float:left;height:22px;width:111px;perspective-origin:55.5px 11px;transform-origin:55.5px 11px;background:#232f3e}#amazon-item-SPAN_7,#amazon-item-SPAN_8{box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 12px/22px Arial,sans-serif}#amazon-item-SPAN_7{color:#fff;column-rule-color:#fff;border:0 #fff;outline:#fff 0;padding:0 8px}#amazon-item-SPAN_8{color:#f69931;column-rule-color:#f69931;border:0 #f69931;outline:#f69931 0}#amazon-item-SPAN_10,#amazon-item-SPAN_9{box-sizing:border-box;overflow-wrap:break-word;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 12px/15px Arial,sans-serif;text-align:left}#amazon-item-SPAN_9{color:#232f3e;display:block;float:left;height:22px;width:10px;column-rule-color:#232f3e;perspective-origin:5px 11px;transform-origin:5px 11px;border-top:22px solid #232f3e;border-right:10px solid transparent;border-bottom:0 none #232f3e;border-left:0 none #232f3e;outline:#232f3e 0}#amazon-item-SPAN_10{color:#0066c0;display:none;position:relative;text-overflow:ellipsis;top:4px;white-space:nowrap;z-index:3;column-rule-color:#0066c0;perspective-origin:50% 50%;transform-origin:50% 50%;border:0 #0066c0;outline:#0066c0 0;overflow:hidden;padding:0 0 0 6px}#amazon-item-A_14,#amazon-item-A_24,#amazon-item-A_31,#amazon-item-A_66,#amazon-item-DIV_11,#amazon-item-DIV_12,#amazon-item-DIV_13,#amazon-item-DIV_16,#amazon-item-DIV_17,#amazon-item-IMG_15{box-sizing:border-box;overflow-wrap:break-word;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 13px/16.25px Arial,sans-serif}#amazon-item-DIV_11{text-align:left;margin:0 0 14px}#amazon-item-DIV_12{float:left;min-height:1px;text-align:left}#amazon-item-DIV_13{bottom:0;color:#949494;display:inline-block;height:189px;left:0;position:relative;right:0;text-align:left;top:0;width:160px;column-rule-color:#949494;perspective-origin:80px 94.5px;transform-origin:80px 94.5px;border:0 #949494;outline:#949494 0}#amazon-item-A_14,#amazon-item-A_24,#amazon-item-A_31,#amazon-item-A_66{color:#0066c0;text-align:left;text-decoration:none;column-rule-color:#0066c0;border:0 #0066c0;outline:#0066c0 0}#amazon-item-IMG_15{color:#0066c0;height:160px;max-width:100%;text-align:left;vertical-align:top;width:160px;column-rule-color:#0066c0;perspective-origin:80px 80px;transform-origin:80px 80px;border:0 #0066c0;outline:#0066c0 0}#amazon-item-DIV_16{color:#949494;text-align:center;column-rule-color:#949494;border:0 #949494;outline:#949494 0}#amazon-item-DIV_17{color:#949494;text-align:center;column-rule-color:#949494;border:0 #949494;margin:6px 0 0;outline:#949494 0}#amazon-item-DIV_17:after,#amazon-item-DIV_17:before{color:#949494;content:'""';display:table;overflow-wrap:break-word;text-align:center;text-size-adjust:100%;word-wrap:break-word;column-rule-color:#949494;border:0 #949494;font:normal normal normal normal 0/0 Arial,sans-serif;outline:#949494 0}#amazon-item-DIV_17:after{clear:both}#amazon-item-A_18,#amazon-item-DIV_19,#amazon-item-DIV_20,#amazon-item-SPAN_21{box-sizing:border-box;overflow-wrap:break-word;text-align:center;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 11px/13.75px Arial,sans-serif}#amazon-item-A_18{color:#0066c0;column-rule-color:#0066c0;border:0 #0066c0;outline:#0066c0 0}#amazon-item-DIV_19{color:#0066c0;column-rule-color:#0066c0;background:#fff;border:1px solid #ddd;border-radius:4px;outline:#0066c0 0}#amazon-item-DIV_20{bottom:0;color:#0066c0;height:21px;left:0;position:relative;right:0;top:0;width:158px;column-rule-color:#0066c0;perspective-origin:79px 10.5px;transform-origin:79px 10.5px;border:0 #0066c0;border-radius:4px;outline:#0066c0 0;padding:4px 6px}#amazon-item-SPAN_32,#amazon-item-SPAN_33,#amazon-item-SPAN_35,#amazon-item-SPAN_51,#amazon-item-SPAN_52,#amazon-item-SUP_34,#amazon-item-SUP_36{color:#111;column-rule-color:#111;border:0 #111;outline:#111 0}#amazon-item-SPAN_21{color:#555;column-rule-color:#555;border:0 #555;outline:#555 0}#amazon-item-DIV_22,#amazon-item-DIV_23,#amazon-item-DIV_63{font:normal normal normal normal 13px/16.25px Arial,sans-serif;box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;border:0 #949494;color:#949494;column-rule-color:#949494;outline:#949494 0;width:298.33px}#amazon-item-DIV_22{height:34px;perspective-origin:149.16px 17px;transform-origin:149.16px 17px;margin:0 0 6px}#amazon-item-DIV_23,#amazon-item-DIV_63{height:18px;perspective-origin:149.16px 9px;transform-origin:149.16px 9px}#amazon-item-H2_25{box-sizing:border-box;color:#0066c0;display:inline;height:auto;overflow-wrap:break-word;text-align:left;text-rendering:optimizeLegibility;text-size-adjust:100%;width:auto;word-wrap:break-word;column-rule-color:#0066c0;border:0 #0066c0;font:normal normal normal normal 15px/18.75px Arial,sans-serif;margin:0;outline:#0066c0 0}#amazon-item-DIV_26,#amazon-item-DIV_42,#amazon-item-DIV_43,#amazon-item-DIV_49,#amazon-item-DIV_59{box-sizing:border-box;color:#949494;height:16px;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;width:298.33px;word-wrap:break-word;column-rule-color:#949494;perspective-origin:149.16px 8px;transform-origin:149.16px 8px;border:0 #949494;font:normal normal normal normal 13px/16.25px Arial,sans-serif;outline:#949494 0}#amazon-item-SPAN_27,#amazon-item-SPAN_28,#amazon-item-SPAN_44,#amazon-item-SPAN_48,#amazon-item-SPAN_55,#amazon-item-SPAN_60{box-sizing:border-box;color:#555;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;column-rule-color:#555;border:0 #555;font:normal normal normal normal 12px/15px Arial,sans-serif;outline:#555 0}#amazon-item-DIV_29,#amazon-item-DIV_30,#amazon-item-DIV_46,#amazon-item-SPAN_32,#amazon-item-SPAN_51,#amazon-item-SPAN_52{font:normal normal normal normal 13px/16.25px Arial,sans-serif;box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word}#amazon-item-DIV_29{color:#949494;height:76px;width:298.33px;column-rule-color:#949494;perspective-origin:149.16px 38px;transform-origin:149.16px 38px;border:0 #949494;margin:0 0 6px;outline:#949494 0}#amazon-item-DIV_30,#amazon-item-DIV_46{color:#949494;width:298.33px;column-rule-color:#949494;border:0 #949494;outline:#949494 0}#amazon-item-SPAN_33{box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 21px/21px Arial,sans-serif;margin:0 -4.41px 0 0}#amazon-item-SUP_34{bottom:0;box-sizing:border-box;display:inline-block;left:0;overflow-wrap:break-word;right:0;text-align:left;text-size-adjust:100%;top:0;width:7px;word-wrap:break-word;perspective-origin:3.5px 6px;transform-origin:3.5px 6px;font:normal normal normal normal 12px/12px Arial,sans-serif;margin:1.8px -4.8px 0 0}#amazon-item-SPAN_35{box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 21px/21px Arial,sans-serif}#amazon-item-SUP_36{bottom:0;box-sizing:border-box;display:inline-block;left:0;overflow-wrap:break-word;right:0;text-align:left;text-size-adjust:100%;top:0;width:14px;word-wrap:break-word;perspective-origin:7px 6px;transform-origin:7px 6px;font:normal normal normal normal 12px/12px Arial,sans-serif;margin:1.2px 0 0 -4.8px}#amazon-item-SPAN_37,#amazon-item-SPAN_40{box-sizing:border-box;color:#949494;display:inline-block;height:0;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;width:5px;word-wrap:break-word;column-rule-color:#949494;perspective-origin:2.5px 0;transform-origin:2.5px 0;border:0 #949494;font:normal normal normal normal 13px/16.25px Arial,sans-serif;outline:#949494 0}#amazon-item-SPAN_38,#amazon-item-SPAN_39{border:0 #555;font:normal normal normal normal 15px/18.75px Arial,sans-serif;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;box-sizing:border-box;color:#555;column-rule-color:#555;outline:#555 0}#amazon-item-I_41{bottom:1px;box-sizing:border-box;color:#fff;display:inline-block;height:19px;left:0;overflow-wrap:break-word;position:relative;right:0;text-align:left;text-size-adjust:100%;top:-1px;vertical-align:bottom;width:80px;word-wrap:break-word;column-rule-color:#fff;perspective-origin:38.5px 9.5px;transform-origin:38.5px 9.5px;background:0 0/400px 670px no-repeat #3f6998;border:0 #fff;border-radius:3px 0 0 3px;font:normal normal bold normal 11px/11.55px Arial,sans-serif;outline:#fff 0;padding:4px 5px 4px 6px}#amazon-item-I_67,#amazon-item-I_69,#amazon-item-SPAN_53,#amazon-item-SPAN_54,#amazon-item-SPAN_56,#amazon-item-SPAN_68{color:#0066c0;column-rule-color:#0066c0;border:0 #0066c0;outline:#0066c0 0}#amazon-item-I_41:after,#amazon-item-I_41:before{color:#fff;content:'""';left:74px;right:-5px;width:0;column-rule-color:#fff;perspective-origin:6px 5px;transform:matrix(1,0,0,1,0,0);border-right:6px dashed rgba(255,255,255,0);border-left:6px dashed rgba(255,255,255,0);font:normal normal bold normal 0/0 Arial,sans-serif;outline:#fff 0;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;height:0;display:block;position:absolute}#amazon-item-I_41:after{bottom:9px;top:0;transform-origin:6px 5px;border-top:10px solid #3f6998;border-bottom:0 dashed rgba(255,255,255,0)}#amazon-item-I_41:before{bottom:0;top:9px;transform-origin:6px 5px;border-top:0 dashed rgba(255,255,255,0);border-bottom:10px solid #3f6998}#amazon-item-SPAN_45{box-sizing:border-box;color:#008a00;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;column-rule-color:#008a00;border:0 #008a00;font:normal normal bold normal 12px/15px Arial,sans-serif;outline:#008a00 0}#amazon-item-DIV_47{box-sizing:border-box;color:#949494;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;width:298.33px;word-wrap:break-word;column-rule-color:#949494;perspective-origin:149.16px 0;transform-origin:149.16px 0;border:0 #949494;font:normal normal normal normal 13px/16.25px Arial,sans-serif;margin:0 0 6px;outline:#949494 0}#amazon-item-SPAN_53,#amazon-item-SPAN_54,#amazon-item-SPAN_56,#amazon-item-SPAN_57{box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word;font:normal normal normal normal 12px/15px Arial,sans-serif}#amazon-item-SPAN_53,#amazon-item-SPAN_54,#amazon-item-SPAN_56{display:inline-block;height:0;width:4.61px;perspective-origin:2.3px 0;transform-origin:2.3px 0}#amazon-item-SPAN_57{color:#555;column-rule-color:#555;border:0 #555;outline:#555 0}#amazon-item-DIV_58,#amazon-item-DIV_61,#amazon-item-SPAN_64,#amazon-item-SPAN_65{color:#949494;column-rule-color:#949494;border:0 #949494;font:normal normal normal normal 13px/16.25px Arial,sans-serif;outline:#949494 0;box-sizing:border-box;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;word-wrap:break-word}#amazon-item-DIV_58{width:298.33px;perspective-origin:149.16px 8px;margin:6px 0}#amazon-item-DIV_61{width:298.33px;perspective-origin:149.16px 8px;margin:0 0 6px}#amazon-item-I_67{background-position:-175px -368px;box-sizing:border-box;overflow-wrap:break-word;position:relative;text-align:left;text-size-adjust:100%;word-wrap:break-word;transform-origin:40px 9px;background:url(https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-28bd59af93d9b1c745bb0aca4de58763b54df7cf._V2_.png) -175px -368px/400px 670px no-repeat rgba(0,0,0,0);font:italic normal normal normal 13px/16.25px Arial,sans-serif}#amazon-item-SPAN_68{box-sizing:border-box;display:block;opacity:0;overflow-wrap:break-word;position:absolute;text-align:left;text-size-adjust:100%;word-wrap:break-word;transform-origin:40px 9px;font:italic normal normal normal 13px/normal Arial,sans-serif;overflow:hidden}#amazon-item-I_69{background-position:-90px -5px;box-sizing:border-box;height:5px;opacity:.6;overflow-wrap:break-word;text-align:left;text-size-adjust:100%;width:7px;word-wrap:break-word;perspective-origin:3.5px 2.5px;transform-origin:3.5px 2.5px;background:url(https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-28bd59af93d9b1c745bb0aca4de58763b54df7cf._V2_.png) -90px -5px/400px 670px no-repeat rgba(0,0,0,0);font:italic normal normal normal 13px/16.25px Arial,sans-serif;margin:5px 0 0 5.01px}
+
+/* Walmart */
+#walmart-item-DIV_1:after,#walmart-item-DIV_1:before{display:table;content:''}#walmart-item-A_8,#walmart-item-IMG_9{color:#007bc4;height:180px;column-rule-color:#007bc4;perspective-origin:90px 90px;transform-origin:90px 90px;border:0 #007bc4;list-style:none;outline:#007bc4 0;box-sizing:border-box}#walmart-item-A_8,#walmart-item-DIV_1,#walmart-item-DIV_1:after,#walmart-item-DIV_1:before,#walmart-item-DIV_3,#walmart-item-DIV_5,#walmart-item-DIV_7,#walmart-item-IMG_9,#walmart-item-SPAN_10,#walmart-item-SPAN_2,#walmart-item-SPAN_6{text-align:left;text-size-adjust:100%;font:normal normal normal normal 16px/24px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif}#walmart-item-DIV_13,#walmart-item-SPAN_14{width:45.94px;perspective-origin:22.97px 10.5px;transform-origin:22.97px 10.5px}#walmart-item-SPAN_21,#walmart-item-SPAN_22,#walmart-item-SPAN_23,#walmart-item-SPAN_24,#walmart-item-SPAN_25,#walmart-item-SPAN_26{color:#0074b8;column-rule-color:#0074b8;border:0 #0074b8;outline:#0074b8 0}#walmart-item-DIV_1,#walmart-item-SPAN_14,#walmart-item-SPAN_21,#walmart-item-SPAN_28{display:inline-block;vertical-align:top}#walmart-item-DIV_1,#walmart-item-DIV_11,#walmart-item-DIV_13,#walmart-item-DIV_1:after,#walmart-item-DIV_1:before,#walmart-item-DIV_3,#walmart-item-DIV_34,#walmart-item-DIV_4,#walmart-item-DIV_7,#walmart-item-SPAN_10{color:#444;column-rule-color:#444;border:0 #444;outline:#444 0}#walmart-item-SPAN_12,#walmart-item-SPAN_2,#walmart-item-SPAN_35,#walmart-item-SPAN_6{clip:rect(0 0 0 0);height:1px;position:absolute;right:181px;width:1px;perspective-origin:.5px .5px;transform-origin:.5px .5px;margin:-1px;outline:#222 0;display:block;color:#222;column-rule-color:#222;border:0 #222;overflow:hidden}#walmart-item-A_36,#walmart-item-DIV_1,#walmart-item-DIV_34,#walmart-item-DIV_5,#walmart-item-SPAN_16,#walmart-item-SPAN_19,#walmart-item-SPAN_30,#walmart-item-SPAN_33{bottom:0;right:0;position:relative}#walmart-item-A_36:before,#walmart-item-DIV_1:after,#walmart-item-DIV_1:before{content:''}#walmart-item-DIV_37,#walmart-item-DIV_39,#walmart-item-H2_38{height:21px;width:180px;perspective-origin:90px 10.5px;transform-origin:90px 10.5px}#walmart-item-DIV_1{box-sizing:border-box;height:305px;left:0;top:0;width:180px;perspective-origin:90px 152.5px;transform-origin:90px 152.5px;list-style:none}#walmart-item-DIV_1:after{clear:both;list-style:none}#walmart-item-DIV_1:before{list-style:none}#walmart-item-SPAN_2{bottom:306px;box-sizing:border-box;left:0;top:0;list-style:none}#walmart-item-DIV_3{bottom:283px;box-sizing:border-box;height:25px;left:0;position:absolute;right:180px;top:-3px;z-index:100;perspective-origin:0 12.5px;transform-origin:0 12.5px;list-style:none}#walmart-item-DIV_4{box-sizing:border-box;display:inline-block;text-align:left;text-size-adjust:100%;font:normal normal normal normal 16px/24px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;margin:0 0 -3px}#walmart-item-DIV_5{box-sizing:border-box;color:#444;height:180px;left:0;max-width:100%;top:0;width:180px;column-rule-color:#444;perspective-origin:90px 90px;transform-origin:90px 90px;border:0 #444;list-style:none;margin:0 0 5px;outline:#444 0}#walmart-item-SPAN_6{bottom:181px;box-sizing:border-box;left:0;top:0;list-style:none}#walmart-item-DIV_7{box-sizing:border-box;float:left;height:180px;width:180px;perspective-origin:90px 90px;transform-origin:90px 90px;list-style:none}#walmart-item-A_8{display:block;text-decoration:none;width:180px}#walmart-item-IMG_9{display:block;max-width:100%;width:180px}#walmart-item-SPAN_10{box-sizing:border-box;list-style:none}#walmart-item-DIV_11,#walmart-item-SPAN_12{font:normal normal normal normal 16px/normal myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;box-sizing:border-box;text-align:left;text-size-adjust:100%}#walmart-item-DIV_11{height:56px;width:180px;perspective-origin:90px 28px;transform-origin:90px 28px;margin:10px 0 0}#walmart-item-SPAN_12{bottom:116px;left:0;top:190px}#walmart-item-DIV_13{box-sizing:border-box;display:inline-block;height:21px;text-align:left;text-size-adjust:100%;font:normal normal normal normal 16px/16px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;margin:0 4px 0 0}#walmart-item-SPAN_14,#walmart-item-SPAN_15,#walmart-item-SPAN_17,#walmart-item-SPAN_18{font:normal normal 600 normal 20px/20px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;box-sizing:border-box;text-align:left;text-size-adjust:100%;color:#007bc4;column-rule-color:#007bc4;border:0 #007bc4;outline:#007bc4 0;text-transform:uppercase}#walmart-item-SPAN_14{height:21px}#walmart-item-SPAN_16{box-sizing:border-box;color:#007bc4;left:0;text-align:left;text-size-adjust:100%;text-transform:uppercase;top:0;vertical-align:8px;column-rule-color:#007bc4;border:0 #007bc4;font:normal normal 600 normal 12px/12px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;outline:#007bc4 0}#walmart-item-SPAN_19{box-sizing:border-box;color:#007bc4;left:0;text-align:left;text-size-adjust:100%;text-transform:uppercase;top:0;column-rule-color:#007bc4;border:0 #007bc4;font:normal normal 600 normal 20px/20px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;outline:#007bc4 0}#walmart-item-SPAN_20,#walmart-item-SPAN_21,#walmart-item-SPAN_22,#walmart-item-SPAN_23,#walmart-item-SPAN_24,#walmart-item-SPAN_25,#walmart-item-SPAN_26{font:normal normal normal normal 14px/normal myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;box-sizing:border-box;text-align:left;text-size-adjust:100%}#walmart-item-SPAN_20{color:#007bc4;display:inline-block;height:16px;vertical-align:bottom;width:75.48px;column-rule-color:#007bc4;perspective-origin:37.73px 8px;transform-origin:37.73px 8px;border:0 #007bc4;margin:0 0 0 4px;outline:#007bc4 0}#walmart-item-SPAN_21{height:16px;text-transform:uppercase;width:44px;perspective-origin:22px 8px;transform-origin:22px 8px}#walmart-item-SPAN_22,#walmart-item-SPAN_24,#walmart-item-SPAN_25{text-transform:uppercase}#walmart-item-SPAN_23,#walmart-item-SPAN_26{bottom:0;left:0;position:relative;right:0;text-transform:uppercase;top:0}#walmart-item-DIV_27{box-sizing:border-box;color:#ea1717;height:16px;text-align:left;text-size-adjust:100%;width:180px;column-rule-color:#ea1717;perspective-origin:90px 8px;transform-origin:90px 8px;border:0 #ea1717;font:normal normal 600 normal 14px/normal myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;margin:-2px 0 0;outline:#ea1717 0}#walmart-item-SPAN_28,#walmart-item-SPAN_29,#walmart-item-SPAN_30,#walmart-item-SPAN_31,#walmart-item-SPAN_32,#walmart-item-SPAN_33{box-sizing:border-box;color:#ea1717;text-align:left;text-size-adjust:100%;text-transform:uppercase;column-rule-color:#ea1717;border:0 #ea1717;font:normal normal bold normal 14px/normal myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;outline:#ea1717 0;list-style:none}#walmart-item-SPAN_28{height:16px;width:36px;perspective-origin:18px 8px;transform-origin:18px 8px}#walmart-item-SPAN_30,#walmart-item-SPAN_33{left:0;top:0}#walmart-item-DIV_34,#walmart-item-SPAN_35{text-size-adjust:100%;font:normal normal normal normal 16px/24px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;left:0;top:0;box-sizing:border-box;text-align:left}#walmart-item-DIV_34{height:54px;width:180px;perspective-origin:90px 27px;transform-origin:90px 27px;list-style:none;margin:0 0 5px}#walmart-item-SPAN_35{bottom:55px;list-style:none}#walmart-item-A_36,#walmart-item-A_36:after,#walmart-item-A_36:before,#walmart-item-DIV_37{color:#444;column-rule-color:#444;border:0 #444;font:normal normal normal normal 16px/19.2px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;outline:#444 0;text-size-adjust:100%}#walmart-item-A_36{box-sizing:border-box;display:block;height:57.59px;left:0;text-align:left;text-decoration:none;text-overflow:ellipsis;top:0;width:180px;perspective-origin:90px 28.8px;transform-origin:90px 28.8px;overflow:hidden}#walmart-item-A_36:after{bottom:18px;content:'';display:block;float:right;height:19px;left:165.59px;position:relative;right:-165.6px;text-align:right;top:-18px;width:48px;perspective-origin:31.5px 9.5px;transform-origin:31.5px 9.5px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff 50%,#fff) rgba(0,0,0,0);margin:0 0 0 -48px;padding:0 15px 0 0}#walmart-item-A_36:before{display:block;float:left;height:58px;text-align:left;width:5px;perspective-origin:2.5px 29px;transform-origin:2.5px 29px}#walmart-item-DIV_37{box-sizing:border-box;float:right;text-align:left;margin:0 0 0 -15px}#walmart-item-H2_38{box-sizing:border-box;color:#222;letter-spacing:-.5px;text-align:left;text-size-adjust:100%;column-rule-color:#222;border:0 #222;font:normal normal bold normal 25px/30px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;margin:0;outline:#222 0}#walmart-item-DIV_39,#walmart-item-MARK_40,#walmart-item-MARK_41{box-sizing:border-box;color:#222;letter-spacing:-.5px;text-align:left;text-size-adjust:100%;column-rule-color:#222;border:0 #222;font:normal normal 600 normal 15px/18px myriad-pro,"Helvetica Neue",Helvetica,Arial,sans-serif;list-style:none;outline:#222 0}#walmart-item-DIV_39{max-height:67.5px;overflow:hidden;padding:3px 0 0}#walmart-item-MARK_40,#walmart-item-MARK_41{background:rgba(0,0,0,0)}
+
+/* eBay */
+#ebay-item-LI_1:after,#ebay-item-LI_1:before{content:'';display:table;height:0;perspective-origin:0 0;transform-origin:0 0;border:0 #767676}#ebay-item-A_4,#ebay-item-IMG_5{display:block;max-width:100%;text-align:center}#ebay-item-A_4,#ebay-item-DIV_2,#ebay-item-IMG_5{height:225px;max-height:225px;width:225px;perspective-origin:112.5px 112.5px;transform-origin:112.5px 112.5px}#ebay-item-DIV_3,#ebay-item-H3_6,#ebay-item-LI_1{left:0;position:relative;right:0}#ebay-item-A_4,#ebay-item-A_7{text-decoration:none}#ebay-item-DIV_2,#ebay-item-LI_1,#ebay-item-LI_1:after,#ebay-item-LI_1:before{outline:#767676 0;color:#767676;column-rule-color:#767676;list-style:none;border-collapse:collapse;text-size-adjust:100%;font:normal normal normal normal 13px/normal "Helvetica neue",Helvetica,Arial,sans-serif}#ebay-item-LI_1{bottom:0;top:0;width:885px;perspective-origin:442.5px 124px;transform-origin:442.5px 124px;border-top:1px solid transparent;border-right:0 solid transparent;border-bottom:1px solid #e4e4e4;border-left:0 solid transparent;padding:9px 0}#ebay-item-LI_1:after{clear:both}#ebay-item-DIV_2{float:left;max-width:225px;text-align:left;border:0 #767676;margin:0 17.69px 3px 0}#ebay-item-DIV_3{border-collapse:collapse;bottom:0;color:#767676;height:225px;min-height:90px;text-align:left;text-size-adjust:100%;top:0;width:225px;column-rule-color:#767676;perspective-origin:113.5px 113.5px;transform-origin:113.5px 113.5px;border:1px solid #e4e4e4;border-radius:3px;font:normal normal normal normal 13px/normal "Helvetica neue",Helvetica,Arial,sans-serif;list-style:none;outline:#767676 0}#ebay-item-A_4,#ebay-item-A_7,#ebay-item-IMG_5{color:#0654ba;column-rule-color:#0654ba;border:0 #0654ba;outline:#0654ba 0}#ebay-item-H3_6,#ebay-item-UL_8{color:#767676;column-rule-color:#767676;border:0 #767676;outline:#767676 0;margin:0}#ebay-item-B_11,#ebay-item-LI_9,#ebay-item-SPAN_10{color:#333;column-rule-color:#333;border:0 #333;outline:#333 0}#ebay-item-A_4,#ebay-item-IMG_5{border-collapse:collapse;text-size-adjust:100%;font:normal normal normal normal 13px/normal "Helvetica neue",Helvetica,Arial,sans-serif;list-style:none}#ebay-item-A_7,#ebay-item-H3_6{overflow-wrap:break-word;word-wrap:break-word;font:normal normal normal normal 16px/20px "Helvetica neue",Helvetica,Arial,sans-serif;border-collapse:collapse;text-size-adjust:100%;text-align:left;list-style:none}#ebay-item-H3_6{bottom:2px;height:20px;top:-2px;width:642.31px;perspective-origin:321.16px 10px;transform-origin:321.16px 10px;overflow:hidden}#ebay-item-UL_8{border-collapse:collapse;float:left;height:76px;text-align:left;text-size-adjust:100%;width:203.55px;perspective-origin:106.19px 42.42px;transform-origin:106.19px 42.42px;font:normal normal normal normal 13px/normal "Helvetica neue",Helvetica,Arial,sans-serif;list-style:none;padding:8.84px 8.84px 0 0}#ebay-item-LI_9{border-collapse:collapse;height:22px;text-size-adjust:100%;width:203.55px;perspective-origin:101.77px 11px;transform-origin:101.77px 11px;font:normal normal normal normal 20px/22px "Helvetica neue",Helvetica,Arial,sans-serif;list-style:none}#ebay-item-B_11,#ebay-item-SPAN_10{border-collapse:collapse;text-align:left;text-size-adjust:100%;font:normal normal bold normal 20px/22px "Helvetica neue",Helvetica,Arial,sans-serif;list-style:none}#ebay-item-LI_12,#ebay-item-LI_14,#ebay-item-SPAN_13{border-collapse:collapse;text-size-adjust:100%;font:normal normal normal normal 13px/normal "Helvetica neue",Helvetica,Arial,sans-serif;color:#767676;column-rule-color:#767676;border:0 #767676;outline:#767676 0}#ebay-item-LI_12{height:15px;width:203.55px;perspective-origin:101.77px 10px;transform-origin:101.77px 10px;list-style:none;padding:3px 0 2px}#ebay-item-SPAN_13{text-align:left;list-style:none}#ebay-item-LI_14{height:22px;width:203.55px;perspective-origin:101.77px 17px;transform-origin:101.77px 17px;list-style:none;padding:12px 0 0}#ebay-item-DIV_15,#ebay-item-DIV_16{width:203.55px;perspective-origin:101.77px 11px;transform-origin:101.77px 11px;font:normal normal bold normal 13px/normal "Helvetica neue",Helvetica,Arial,sans-serif;text-align:left;border-collapse:collapse;text-size-adjust:100%;list-style:none}#ebay-item-DIV_15{color:#767676;height:22px;column-rule-color:#767676;border:0 #767676;outline:#767676 0}#ebay-item-DIV_16{color:#dd1e31;height:15px;column-rule-color:#dd1e31;border:0 #dd1e31;outline:#dd1e31 0;padding:0 0 7px}#ebay-item-UL_17{border-collapse:collapse;color:#767676;float:left;height:28px;text-align:left;text-size-adjust:100%;width:354px;column-rule-color:#767676;perspective-origin:181.42px 23.42px;transform-origin:181.42px 23.42px;border:0 #767676;font:normal normal normal normal 13px/normal "Helvetica neue",Helvetica,Arial,sans-serif;list-style:none;margin:0;outline:#767676 0;padding:8.84px 0 10px 8.84px}#ebay-item-LI_18{border-collapse:collapse;color:#767676;height:18px;text-size-adjust:100%;width:344px;column-rule-color:#767676;perspective-origin:177px 14px;transform-origin:177px 14px;border:0 #767676;font:normal normal normal normal 13px/18.2px "Helvetica neue",Helvetica,Arial,sans-serif;list-style:none;outline:#767676 0;padding:5px}

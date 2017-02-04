@@ -10,7 +10,7 @@ var profiles = {
   },
   default: {
     usd_per_minute: 0.333333,
-    usd_per_hour: 90,
+    usd_per_hour: 20,
     usd_per_day: 160,
     usd_per_week: 800,
     usd_per_month: 3200,
