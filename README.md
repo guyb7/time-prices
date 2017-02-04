@@ -1,9 +1,14 @@
 # TimePrices
 A Chrome extension that shows a tooltip when hovering over prices with the time that will take you to earn that amount.
 
+## Install the extension
+TODO
+
 ## Demo
 [Demo page here](https://guyb7.github.io/time-prices/)
+
 Screenshots:
+
 ![Time Prices Screenshot](./docs/time-prices-screenshot.jpg)
 
 ## Bugs & Feature Requests
