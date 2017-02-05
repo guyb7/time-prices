@@ -1,6 +1,7 @@
 function saveSettings(e) {
   e.preventDefault();
   hideSaveSuccess();
+  autoFill();
   inputsIterator(function(el) {
     var name = el.getAttribute('name');
     if (settings[name] !== undefined) {
@@ -13,7 +14,7 @@ function saveSettings(e) {
     showSaveSuccess();
     window.setTimeout(function() {
       hideSaveSuccess();
-    }, 3000);
+    }, 5000);
   });
   return false;
 }
@@ -69,7 +70,6 @@ function loadProfile() {
 var form = document.getElementById('settings-form');
 form.addEventListener('submit', saveSettings);
 document.getElementById('profiles').addEventListener('change', loadProfile);
-document.getElementById('autoFill').addEventListener('click', autoFill);
 
 loadSettings(function() {
   fillSettingsForm();

@@ -41,8 +41,7 @@
 
         <section class="post">
           <p class="post-description">
-            Insert your income in USD. Empty fields can be automatically filled (on a basis of 5 working days a week, 8 hours a day).
-            You can leave empty fields, we will calculate the time based on the closest match.
+            Insert your income in USD. Empty fields will be filled automatically (on a basis of 5 working days a week, 8 hours a day).
           </p>
           <div class="pure-g">
             <div class="pure-u-5-6"></div>
@@ -60,37 +59,40 @@
             </div>
           </div>
           <form id="settings-form" class="pure-form pure-form-aligned">
+            <div class="pure-g">
+              <div class="pure-u-1-2">
+                <h2 class="text-center">Hourly Rate ($)</h2>
+                <div class="pure-control-group">
+                  <label>Hour</label>
+                  <input name="usd_per_hour" type="number" placeholder="USD">
+                </div>
+              </div>
+              <div class="pure-u-1-2">
+                <h2 class="text-center">Salary ($)</h2>
+                <div class="pure-control-group">
+                  <label>Year</label>
+                  <input name="usd_per_year" type="number" placeholder="USD">
+                </div>
+                <div class="pure-control-group">
+                  <label>Month</label>
+                  <input name="usd_per_month" type="number" placeholder="USD">
+                </div>
+                <div class="pure-control-group">
+                  <label>Week</label>
+                  <input name="usd_per_week" type="number" placeholder="USD">
+                </div>
+                <div class="pure-control-group">
+                  <label>Day</label>
+                  <input name="usd_per_day" type="number" placeholder="USD">
+                </div>
+              </div>
+            </div>
             <fieldset>
-              <div class="pure-control-group">
-                <label>Per Year</label>
-                <input name="usd_per_year" type="number" placeholder="USD">
-              </div>
-              <div class="pure-control-group">
-                <label>Per Month</label>
-                <input name="usd_per_month" type="number" placeholder="USD">
-              </div>
-              <div class="pure-control-group">
-                <label>Per Week</label>
-                <input name="usd_per_week" type="number" placeholder="USD">
-              </div>
-              <div class="pure-control-group">
-                <label>Per Day</label>
-                <input name="usd_per_day" type="number" placeholder="USD">
-              </div>
-              <div class="pure-control-group">
-                <label>Per Hour</label>
-                <input name="usd_per_hour" type="number" placeholder="USD">
-              </div>
 
               <div class="pure-controls">
-                <div>
-                  Reload open pages to update times
-                </div>
-                <button id="autoFill" type="button" class="pure-button">Auto Fill</button>
                 <button type="submit" class="pure-button pure-button-primary">Save</button>
-                <span id="settings-save-success" class="success-icon hidden">&#10004;</span>
+                <span id="settings-save-success" class="success-icon hidden">&#10004; Reload open pages to update times</span>
               </div>
-            </fieldset>
             </fieldset>
           </form>
         </section>

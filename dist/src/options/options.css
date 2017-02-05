@@ -151,6 +151,10 @@ h3 {
   background: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .hidden-mobile, .hidden {
   display: none;
 }
