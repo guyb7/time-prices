@@ -6,7 +6,6 @@
   <title>TimePrices - Demo</title>
   <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
-  <link rel="stylesheet" href="./inject.css">
   <link rel="stylesheet" href="./demo.css">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -18,6 +17,10 @@
     <div class="header">
       <h1 class="brand-title">TimePrices</h1>
       <h2 class="brand-tagline">Shows prices in terms of the time it will take you to earn it</h2>
+      <a href="https://chrome.google.com/webstore/detail/ghhacoaoggpnihbdoejcmpmiepkjkedh">
+        <img src="./chrome-web-store-icon.png" style="height: 32px; position: relative; top: 8px;">
+        Add extension
+      </a>
     </div>
   </div>
 
@@ -71,7 +74,7 @@
       </section>
 
       <section class="post">
-        <h2>Amazon</h2>
+        <h2>Amazon UK</h2>
         <li id="amazon-item-LI_1">
           <div id="amazon-item-DIV_2">
             <div id="amazon-item-DIV_3">
@@ -286,7 +289,21 @@ function debounce(func, wait, immediate) {
 function addSettingsChangeListener(){}
 function updateRates(){}
 </script>
-<script src="./inject.js"></script>
+
+<script>
+var inject_script = document.createElement('script');
+var inject_style = document.createElement('link');
+inject_style.setAttribute('rel', 'stylesheet');
+if (window.location.hostname === 'guyb7.github.io') {
+  inject_script.setAttribute('src', 'https://raw.githubusercontent.com/guyb7/time-prices/master/dist/src/inject/inject.js');
+  inject_style.setAttribute('href', 'https://raw.githubusercontent.com/guyb7/time-prices/master/dist/src/inject/inject.css');
+} else {
+  inject_script.setAttribute('src', './../dist/src/inject/inject.js');
+  inject_style.setAttribute('href', './../dist/src/inject/inject.css');
+}
+document.head.appendChild(inject_script);
+document.head.appendChild(inject_style);
+</script>
 
 </body>
 </html>
