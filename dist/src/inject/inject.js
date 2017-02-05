@@ -234,4 +234,5 @@ function triggerDomChange() {
 loadSettings(function() {
   listenForDomChanges();
   triggerDomChange();
+  addSettingsChangeListener();
 });

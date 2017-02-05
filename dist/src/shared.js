@@ -66,6 +66,10 @@ function loadSettings(cb) {
   });
 }
 
+function reloadSettings(newSettings, oldSettings) {
+  settings = newSettings;
+}
+
 function getAutoSettings(partialSettings, cb) {
   for (var k in partialSettings) {
     if (partialSettings[k] === 0 || partialSettings[k] === '') {
@@ -147,3 +151,11 @@ function debounce(func, wait, immediate) {
     if (callNow) func.apply(context, args);
   };
 };
+
+function addSettingsChangeListener() {
+  chrome.storage.onChanged.addListener(function(changes, namespace) {
+    if (changes.settings !== undefined) {
+      reloadSettings(changes.settings.newValue, changes.settings.oldValue);
+    }
+  });
+}
