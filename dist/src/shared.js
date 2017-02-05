@@ -70,6 +70,10 @@ function reloadSettings(newSettings, oldSettings) {
   settings = newSettings;
 }
 
+function reloadRates(newSettings, oldSettings) {
+  rates = newSettings.rates;
+}
+
 function getAutoSettings(partialSettings, cb) {
   for (var k in partialSettings) {
     if (partialSettings[k] === 0 || partialSettings[k] === '') {
@@ -137,6 +141,40 @@ function getAutoSettings(partialSettings, cb) {
   cb(autoSettings);
 }
 
+var rates_json_url = 'https://raw.githubusercontent.com/guyb7/time-prices/master/static/rates.json';
+function updateRates() {
+  chrome.storage.sync.get('rates', function(storage) {
+    if (Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 86400)) {
+      fetchJSONFile(rates_json_url, function(data){
+        if (data.rates && Object.keys(data.rates).length > 0) {
+          rates = data.rates;
+          var new_rates = {
+            last_check: Math.floor(Date.now() / 1000),
+            rates: data.rates
+          };
+          chrome.storage.sync.set({ 'rates': new_rates });
+        }
+      });
+    } else if (storage.rates && storage.rates.rates) {
+      rates = storage.rates.rates;
+    }
+  });
+}
+
+function fetchJSONFile(path, callback) {
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function() {
+    if (httpRequest.readyState === 4) {
+      if (httpRequest.status === 200) {
+        var data = JSON.parse(httpRequest.responseText);
+        if (callback) callback(data);
+      }
+    }
+  };
+  httpRequest.open('GET', path);
+  httpRequest.send(); 
+}
+
 function debounce(func, wait, immediate) {
   var timeout;
   return function() {
@@ -156,6 +194,9 @@ function addSettingsChangeListener() {
   chrome.storage.onChanged.addListener(function(changes, namespace) {
     if (changes.settings !== undefined) {
       reloadSettings(changes.settings.newValue, changes.settings.oldValue);
+    }
+    if (changes.rates !== undefined) {
+      reloadRates(changes.rates.newValue, changes.rates.oldValue);
     }
   });
 }
