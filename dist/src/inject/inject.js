@@ -168,7 +168,7 @@ function removeDuplicates() {
     var el = elements[i];
     var parent = el.parentNode;
     var max_depth = 50;
-    while (max_depth > 0 && parent && parent !== document.body && parent !== document) {
+    while (max_depth > 0 && parent && parent !== document) {
       if (parent.hasAttribute(namespace + 'text')) {
         parent.removeAttribute(namespace + 'text');
         parent.removeAttribute(namespace + 'isnew');
