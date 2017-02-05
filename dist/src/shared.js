@@ -39,6 +39,14 @@ var profiles = {
     usd_per_week: 442,
     usd_per_month: 1916,
     usd_per_year: 23000
+  },
+  office_manager: {
+    usd_per_minute: 0.4,
+    usd_per_hour: 24,
+    usd_per_day: 192,
+    usd_per_week: 962,
+    usd_per_month: 4167,
+    usd_per_year: 50000
   }
 };
 
