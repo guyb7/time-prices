@@ -68,7 +68,7 @@ function showTooltip(ev) {
     }
   }
   var content_el = tooltip.querySelector('.' + namespace + 'content');
-  content_el.innerHTML = el.getAttribute(namespace + 'text');
+  content_el.innerHTML = workTimeText(el.getAttribute(namespace + 'text'));
   var cords = el.getBoundingClientRect();
   var content_cords = content_el.getBoundingClientRect();
   var top, left, ttClass;
@@ -131,7 +131,7 @@ var re_function = function(original, us, currency, usd, cents, kilo) {
 };
 var re_function_html = function(original, us, currency, usd, cents, kilo) {
   var usd = re_function(original, us, currency, usd, cents, kilo);
-  return `<span ${namespace}text="${workTimeText(usd.usd)}" ${namespace}isnew="true">${usd.original}</span>`;
+  return `<span ${namespace}text="${usd.usd}" ${namespace}isnew="true">${usd.original}</span>`;
 };
 function findPrices() {
   createTooltip();
@@ -150,7 +150,7 @@ function findPrices() {
         var matches = re.exec(el.parentNode.parentNode.textContent);
         if (matches) {
           var usd = re_function(...matches);
-          parent.setAttribute(namespace + 'text', workTimeText(usd.usd));
+          parent.setAttribute(namespace + 'text', usd.usd);
           parent.setAttribute(namespace + 'isnew', "true");
         }
       }
