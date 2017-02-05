@@ -5,9 +5,11 @@ function getAllElements() {
   var results = [];
   var child;
   for(var i = 0; i < elements.length; i++) {
-    child = elements[i].childNodes[0];
-    if((elements[i].hasChildNodes() && child.nodeType === 3)) {
-      results.push(child);
+    for(var j = 0; j < elements[i].childNodes.length; j++) {
+      child = elements[i].childNodes[j];
+      if((elements[i].hasChildNodes() && child.nodeType === 3)) {
+        results.push(child);
+      }
     }
   }
   return results;
@@ -44,6 +46,7 @@ function workTimeText(usd) {
 var tooltip = null;
 
 function createTooltip() {
+  tooltip = document.getElementById(namespace + 'tooltip')
   if (tooltip !== null) {
     return;
   }
