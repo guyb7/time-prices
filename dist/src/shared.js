@@ -126,10 +126,10 @@ function getAutoSettings(partialSettings, cb) {
       autoSettings.usd_per_hour = autoSettings.usd_per_day / 8;
     }
   }
-  autoSettings.usd_per_minute = autoSettings.usd_per_hour / 60;
   for (var k in autoSettings) {
-    autoSettings[k] = Math.round(autoSettings[k]);
+    autoSettings[k] = Math.max(Math.round(autoSettings[k]), 1);
   }
+  autoSettings.usd_per_minute = autoSettings.usd_per_hour / 60;
   cb(autoSettings);
 }
 
