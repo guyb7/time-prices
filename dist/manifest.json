@@ -1,6 +1,6 @@
 {
   "name": "TimePrices",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "Shows prices in terms of the time it will take you to earn it",
   "homepage_url": "https://github.com/guyb7/time-prices",
