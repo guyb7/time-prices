@@ -164,6 +164,14 @@ h3 {
   padding: 6px;
 }
 
+.posts {
+  margin: 40px 0;
+}
+
+.pure-form-aligned .pure-control-group label {
+  width: 5em;
+}
+
 @media (min-width: 48em) {
   .content {
     padding: 2em 3em 0;
