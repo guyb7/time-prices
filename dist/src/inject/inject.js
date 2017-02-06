@@ -117,7 +117,13 @@ var supported_currencies = [
   }, {
     currency: 'GBP',
     sign: '£'
-  }, 
+  }, {
+    currency: 'JPY',
+    sign: '¥'
+  }, {
+    currency: 'EUR',
+    sign: '€'
+  }
 ];
 function getCurrencyFromSign(sign) {
   for (var i = 0; i < supported_currencies.length; i++) {
@@ -259,7 +265,7 @@ function triggerDomChange() {
 }
 
 //https://openexchangerates.org/api/latest.json?app_id=[app_id]&base=USD
-var rates = { GBP: .801025, USD: 1 };
+var rates = { GBP: 0.801025, USD: 1, JPY: 112.54546875, EUR: 0.931057 };
 
 function convertCurrency(amount, to) {
   if (rates[to]) {
