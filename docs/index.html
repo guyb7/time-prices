@@ -254,11 +254,11 @@ var inject_script = document.createElement('script');
 var inject_style = document.createElement('link');
 inject_style.setAttribute('rel', 'stylesheet');
 if (window.location.hostname === 'guyb7.github.io') {
-  inject_script.setAttribute('src', 'https://cdn.rawgit.com/guyb7/time-prices/master/dist/src/inject/inject.js');
-  inject_style.setAttribute('href', 'https://cdn.rawgit.com/guyb7/time-prices/master/dist/src/inject/inject.css');
+  inject_script.setAttribute('src', 'https://cdn.rawgit.com/guyb7/time-prices/master/dist/src/inject/time-prices.js');
+  inject_style.setAttribute('href', 'https://cdn.rawgit.com/guyb7/time-prices/master/dist/src/inject/time-prices.css');
 } else {
-  inject_script.setAttribute('src', './../dist/src/inject/inject.js');
-  inject_style.setAttribute('href', './../dist/src/inject/inject.css');
+  inject_script.setAttribute('src', './../dist/src/inject/time-prices.js');
+  inject_style.setAttribute('href', './../dist/src/inject/time-prices.css');
 }
 document.head.appendChild(inject_script);
 document.head.appendChild(inject_style);
