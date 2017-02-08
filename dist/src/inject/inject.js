@@ -1,14 +1,25 @@
 var namespace = 'timeprices-';
 
-function getAllElements() {
-  var elements = document.querySelectorAll('body, body *');
+function getAllElements(addedNodes) {
+  var elements = [];
+  for (var i = 0; i < addedNodes.length; i++) {
+    elements.push(addedNodes[i]);
+    if (addedNodes[i].nodeType === 1) {
+      var children = addedNodes[i].querySelectorAll('*');
+      for (var j = 0; j < children.length; j++) {
+        elements.push(children[j]);
+      }
+    }
+  }
   var results = [];
   var child;
   for(var i = 0; i < elements.length; i++) {
-    for(var j = 0; j < elements[i].childNodes.length; j++) {
-      child = elements[i].childNodes[j];
-      if((elements[i].hasChildNodes() && child.nodeType === 3)) {
-        results.push(child);
+    if (elements[i].childNodes) {
+      for(var j = 0; j < elements[i].childNodes.length; j++) {
+        child = elements[i].childNodes[j];
+        if((elements[i].hasChildNodes() && child.nodeType === 3)) {
+          results.push(child);
+        }
       }
     }
   }
@@ -163,11 +174,11 @@ var re_function = function(original, sign, amount, cents, kilo) {
   };
 };
 var html_tag = 'span-tp';
-function findPrices() {
+function findPrices(addedNodes) {
   createTooltip();
-  var textnodes = getAllElements();
-  for (var i = 0, len = textnodes.length; i < len; i++) {
-    var el = textnodes[i];
+  var nodes = getAllElements(addedNodes);
+  for (var i = 0, len = nodes.length; i < len; i++) {
+    var el = nodes[i];
     if (!el || !el.parentNode || el.parentNode.hasAttribute(namespace + 'text')) {
       continue;
     }
@@ -246,13 +257,24 @@ function fixHoverBlockers() {
   }
 }
 
+var addedNodes = [];
+// Rapid DOM changes may be missed because of debounce. It's a tradeoff for not overloading the user's CPU on heavy DOM manipulating websites
 var handleDomChanges = debounce(function() {
-  findPrices();
+  findPrices(addedNodes);
+  addedNodes = [];
 }, 150);
 
 function listenForDomChanges() {
   var target = document.querySelector('body');
   var observer = new MutationObserver(function(mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      var nodes = mutations[i].addedNodes;
+      if (nodes.length > 0) {
+        for (var j = 0; j < nodes.length; j++) {
+          addedNodes.push(nodes[j]);
+        }
+      }
+    }
     handleDomChanges();
   });
   var config = { childList: true, subtree: true };
@@ -261,7 +283,8 @@ function listenForDomChanges() {
 
 // For the rare case that the DOM is done loading before the extension
 function triggerDomChange() {
-  document.body.append(document.createElement('span'));
+  addedNodes.push(document.body);
+  handleDomChanges();
 }
 
 //https://openexchangerates.org/api/latest.json?app_id=[app_id]&base=USD
