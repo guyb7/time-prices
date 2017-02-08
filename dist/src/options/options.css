@@ -154,6 +154,9 @@ h3 {
 .text-center {
   text-align: center;
 }
+.text-bold {
+  font-weight: bold;
+}
 
 .hidden-mobile, .hidden {
   display: none;
