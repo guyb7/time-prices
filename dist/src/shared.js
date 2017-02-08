@@ -141,22 +141,36 @@ function getAutoSettings(partialSettings, cb) {
   cb(autoSettings);
 }
 
-var rates_json_url = 'https://raw.githubusercontent.com/guyb7/time-prices/master/static/rates.json';
-function updateRates() {
+var rates_json_url = 'https://api.fixer.io/latest?base=USD&symbols=GBP,EUR,JPY';
+function updateRates(cb, force) {
+  if (!cb) {
+    cb = function(){};
+  }
   chrome.storage.sync.get('rates', function(storage) {
-    if (Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 86400)) {
-      fetchJSONFile(rates_json_url, function(data){
+    if (storage.rates && storage.rates.rates) {
+      rates = storage.rates.rates;
+      rates_last = storage.rates.rates;
+    }
+    if (storage.rates && storage.rates.last_check) {
+      rates_last_check = storage.rates.last_check;
+    }
+    if (force || Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 86400)) {
+      fetchJSONFile(rates_json_url, function(data) {
         if (data.rates && Object.keys(data.rates).length > 0) {
           rates = data.rates;
           var new_rates = {
             last_check: Math.floor(Date.now() / 1000),
             rates: data.rates
           };
+          rates_last_check = new_rates.last_check;
           chrome.storage.sync.set({ 'rates': new_rates });
+          cb();
+        } else {
+          cb();
         }
       });
-    } else if (storage.rates && storage.rates.rates) {
-      rates = storage.rates.rates;
+    } else {
+      cb();
     }
   });
 }

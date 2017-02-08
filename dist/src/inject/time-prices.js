@@ -287,8 +287,9 @@ function triggerDomChange() {
   handleDomChanges();
 }
 
-//https://openexchangerates.org/api/latest.json?app_id=[app_id]&base=USD
-var rates = { GBP: 0.801025, USD: 1, JPY: 112.54546875, EUR: 0.931057 };
+// https://api.fixer.io/latest?base=USD&symbols=GBP,EUR,JPY
+var rates = { EUR: 0.93765, GBP: 0.79995, JPY: 111.95 };
+var rates_last_check = null;
 
 function convertCurrency(amount, to) {
   if (rates[to]) {
