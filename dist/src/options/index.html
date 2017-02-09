@@ -18,6 +18,7 @@
       <h1 class="brand-title">TimePrices</h1>
       <nav class="side-nav nav-list">
         <li class="active" tab-target="settings"><a>Settings</a></li>
+        <li tab-target="advanced"><a>Advanced settings</a></li>
         <li tab-target="howto"><a>How to use</a></li>
         <li tab-target="about"><a>About</a></li>
       </nav>
@@ -40,7 +41,7 @@
             </div>
             <div class="pure-u-1-6">
               <form class="pure-form pure-form-stacked">
-                <label>Premade Profiles</label>
+                <label>Example Profiles</label>
                 <select id="profiles" class="pure-input" style="width:100%;">
                   <option value="empty" selected></option>
                   <option value="barista">Starbucks Barista</option>
@@ -112,6 +113,32 @@
           </p>
           <button id="currencies-force-update" class="button-xsmall pure-button">Update now</button>
         </div>
+        </section>
+      </div>
+
+      <div class="posts" tab-id="advanced">
+        <section class="post">
+          <form id="advanced-settings-form" class="pure-form pure-form-stacked">
+            <fieldset>
+              <h1 class="content-subhead">Blacklist</h1>
+              <p class="post-description">
+                The extension will not load on the domains listed below. Insert each domain in a new line.
+              </p>
+              <p class="post-description">
+                Each line is compared to the end of the domain, meaning "gle.com" will also match "google.com" and "mail.google.com"
+              </p>
+              <textarea id="domains-blacklist" class="pure-input-1-2" rows="8"></textarea>
+            </fieldset>
+            <fieldset>
+              <h1 class="content-subhead">Whitelist</h1>
+              <p class="post-description">
+                If not left empty, the extension will load <em><strong>only</strong></em> on the domains listed below. Insert each domain in a new line, like the blacklist.
+              </p>
+              <textarea id="domains-whitelist" class="pure-input-1-2" rows="8"></textarea>
+            </fieldset>
+            <button type="submit" class="pure-button button-xsmall pure-button-primary">Save</button>
+            <span id="settings-advanced-save-success" class="success-icon hidden">&#10004; Saved</span>
+          </form>
         </section>
       </div>
 

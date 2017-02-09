@@ -1,6 +1,6 @@
 function saveSettings(e) {
   e.preventDefault();
-  hideSaveSuccess();
+  hideEl('settings-save-success');
   autoFill();
   inputsIterator(function(el) {
     var name = el.getAttribute('name');
@@ -11,19 +11,12 @@ function saveSettings(e) {
     }
   });
   chrome.storage.sync.set({'settings': settings}, function() {
-    showSaveSuccess();
+    showEl('settings-save-success');
     window.setTimeout(function() {
-      hideSaveSuccess();
+      hideEl('settings-save-success');
     }, 5000);
   });
   return false;
-}
-
-function showSaveSuccess() {
-  document.getElementById('settings-save-success').classList.remove('hidden');
-}
-function hideSaveSuccess() {
-  document.getElementById('settings-save-success').classList.add('hidden');
 }
 
 function fillSettingsForm() {
@@ -33,6 +26,34 @@ function fillSettingsForm() {
       el.value = settings[name];
     }
   });
+}
+
+function removeEmptyElements(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].length === 0) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return arr;
+}
+
+function saveAdvancedSettings(e) {
+  e.preventDefault();
+  hideEl('settings-advanced-save-success');
+  var blacklist = removeEmptyElements(document.getElementById('domains-blacklist').value.split("\n"));
+  var whitelist = removeEmptyElements(document.getElementById('domains-whitelist').value.split("\n"));
+  var settings_advanced = {
+    blacklist_domains: blacklist,
+    whitelist_domains: whitelist
+  };
+  chrome.storage.sync.set({'settings_advanced': settings_advanced}, function() {
+    showEl('settings-advanced-save-success');
+    window.setTimeout(function() {
+      hideEl('settings-advanced-save-success');
+    }, 5000);
+  });
+  return false;
 }
 
 function timeSince(seconds) {
@@ -148,3 +169,8 @@ loadSettings(function() {
 updateRates(function() {
   fillRatesData();
 });
+loadAdvancedSettings(function() {
+  document.getElementById('domains-blacklist').value = settings_advanced.blacklist_domains.join("\n");
+  document.getElementById('domains-whitelist').value = settings_advanced.whitelist_domains.join("\n");
+});
+document.getElementById('advanced-settings-form').addEventListener('submit', saveAdvancedSettings);

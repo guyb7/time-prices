@@ -1,4 +1,5 @@
 var settings;
+var settings_advanced;
 var profiles = {
   empty: {
     usd_per_minute: '',
@@ -49,6 +50,10 @@ var profiles = {
     usd_per_year: 50000
   }
 };
+var default_settings_advanced = {
+  blacklist_domains: ['salesforce.com', 'example.com'],
+  whitelist_domains: []
+};
 
 function loadSettings(cb) {
   chrome.storage.sync.get('settings', function(storage) {
@@ -63,6 +68,17 @@ function loadSettings(cb) {
       settings = profiles.default;
       cb(settings);
     }
+  });
+}
+
+function loadAdvancedSettings(cb) {
+  chrome.storage.sync.get('settings_advanced', function(storage) {
+    if (Object.keys(storage).length > 0) {
+      settings_advanced = storage.settings_advanced;
+    } else {
+      settings_advanced = default_settings_advanced;
+    }
+    cb();
   });
 }
 
@@ -173,6 +189,13 @@ function updateRates(cb, force) {
       cb();
     }
   });
+}
+
+function showEl(id) {
+  document.getElementById(id).classList.remove('hidden');
+}
+function hideEl(id) {
+  document.getElementById(id).classList.add('hidden');
 }
 
 function fetchJSONFile(path, callback) {

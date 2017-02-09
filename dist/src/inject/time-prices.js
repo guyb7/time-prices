@@ -299,9 +299,18 @@ function convertCurrency(amount, to) {
   }
 }
 
-loadSettings(function() {
-  updateRates();
-  listenForDomChanges();
-  triggerDomChange();
-  addSettingsChangeListener();
+function startTimeprices(cb) {
+  loadAdvancedSettings(function() {
+    console.log('settings_advanced', settings_advanced);
+    cb();
+  });
+}
+
+startTimeprices(function() {
+  loadSettings(function() {
+    updateRates();
+    listenForDomChanges();
+    triggerDomChange();
+    addSettingsChangeListener();
+  });
 });
