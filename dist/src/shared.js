@@ -1,5 +1,6 @@
 var settings;
 var settings_advanced;
+var extension_id = 'cahhhfnkoamejaippijpiacpnhhniecb';
 var profiles = {
   empty: {
     usd_per_minute: '',

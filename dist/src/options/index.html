@@ -116,7 +116,7 @@
         </section>
       </div>
 
-      <div class="posts" tab-id="advanced">
+      <div class="posts hidden" tab-id="advanced">
         <section class="post">
           <form id="advanced-settings-form" class="pure-form pure-form-stacked">
             <fieldset>
@@ -125,7 +125,7 @@
                 The extension will not load on the domains listed below. Insert each domain in a new line.
               </p>
               <p class="post-description">
-                Each line is compared to the end of the domain, meaning "gle.com" will also match "google.com" and "mail.google.com"
+                Each line is compared to the end of the domain, meaning "gle.com" will also match "google.com" and "mail.google.com". You can use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">Regular-Expressions</a>, but notice that dots ('.') will be escaped automatically.
               </p>
               <textarea id="domains-blacklist" class="pure-input-1-2" rows="8"></textarea>
             </fieldset>

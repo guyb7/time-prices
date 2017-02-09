@@ -301,8 +301,24 @@ function convertCurrency(amount, to) {
 
 function startTimeprices(cb) {
   loadAdvancedSettings(function() {
-    console.log('settings_advanced', settings_advanced);
-    cb();
+    var current_domain = window.location.hostname;
+    if (settings_advanced.whitelist_domains.length > 0) {
+      for (var i = 0; i < settings_advanced.whitelist_domains.length; i++) {
+        var domain_regex = new RegExp(settings_advanced.whitelist_domains[i].replace('.', '\.') + '$', 'i');
+        if (current_domain.match(domain_regex)) {
+          cb();
+          return;
+        }
+      }
+    } else {
+      for (var i = 0; i < settings_advanced.blacklist_domains.length; i++) {
+        var domain_regex = new RegExp(settings_advanced.blacklist_domains[i].replace('.', '\.') + '$', 'i');
+        if (current_domain.match(domain_regex)) {
+          return;
+        }
+      }
+      cb();
+    }
   });
 }
 
