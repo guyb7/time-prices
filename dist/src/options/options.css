@@ -71,6 +71,32 @@ h3 {
   text-decoration: none;
 }
 
+.side-nav {
+  margin-top: 20px;
+}
+.side-nav li, .side-nav a {
+  display: block;
+}
+.side-nav a {
+  font-size: 100%;
+  color: #fff;
+  letter-spacing: 0.05em;
+  padding: 10px 5px;
+  opacity: 0.75;
+  text-decoration: none;
+  cursor: default;
+}
+.side-nav li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.side-nav li.active a {
+  opacity: 0.9;
+}
+.side-nav li:not(.active) a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .content-subhead {
   text-transform: uppercase;
   color: #aaa;

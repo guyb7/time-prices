@@ -109,6 +109,30 @@ function loadProfile() {
   }
 }
 
+var tab_buttons = document.querySelectorAll('[tab-target]');
+for (var i = 0; i < tab_buttons.length; i++) {
+  tab_buttons[i].addEventListener('click', function() {
+    changeTab(this.getAttribute('tab-target'));
+  });
+}
+function changeTab(tab) {
+  var tabs = document.querySelectorAll('[tab-id]');
+  for (var i = 0; i < tabs.length; i++) {
+    if (tabs[i].getAttribute('tab-id') === tab) {
+      tabs[i].classList.remove('hidden');
+    } else {
+      tabs[i].classList.add('hidden');
+    }
+  }
+  for (var i = 0; i < tab_buttons.length; i++) {
+    if (tab_buttons[i].getAttribute('tab-target') === tab) {
+      tab_buttons[i].classList.add('active');
+    } else {
+      tab_buttons[i].classList.remove('active');
+    }
+  }
+}
+
 var form = document.getElementById('settings-form');
 form.addEventListener('submit', saveSettings);
 document.getElementById('profiles').addEventListener('change', loadProfile);
