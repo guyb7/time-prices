@@ -18,6 +18,7 @@ function saveSettings(e) {
       }, 5000);
     });
   });
+  ga('settings', 'saveSettings');
   return false;
 }
 
@@ -48,7 +49,8 @@ function saveAdvancedSettings(e) {
   var whitelist = removeEmptyElements(document.getElementById('domains-whitelist').value.split("\n"));
   var settings_advanced = {
     blacklist_domains: blacklist,
-    whitelist_domains: whitelist
+    whitelist_domains: whitelist,
+    usage_statistics: document.getElementById('usage-statistics').checked
   };
   chrome.storage.sync.set({'settings_advanced': settings_advanced}, function() {
     showEl('settings-advanced-save-success');
@@ -56,6 +58,7 @@ function saveAdvancedSettings(e) {
       hideEl('settings-advanced-save-success');
     }, 5000);
   });
+  ga('settings', 'saveAdvancedSettings');
   return false;
 }
 
@@ -135,6 +138,7 @@ function loadProfile() {
     fillSettingsForm();
     document.getElementById('base_currency').value = 'USD';
   }
+  ga('settings', 'loadProfile', chosenProfile);
 }
 
 var tab_buttons = document.querySelectorAll('[tab-target]');
@@ -159,6 +163,7 @@ function changeTab(tab) {
       tab_buttons[i].classList.remove('active');
     }
   }
+  ga('settings', 'changeTab', tab);
 }
 
 var form = document.getElementById('settings-form');
@@ -168,6 +173,7 @@ document.getElementById('currencies-force-update').addEventListener('click', fun
   updateRates(function() {
     fillRatesData();
   }, true);
+  ga('settings', 'currencies-force-update');
 });
 
 loadSettings(function() {
@@ -179,5 +185,15 @@ updateRates(function() {
 loadAdvancedSettings(function() {
   document.getElementById('domains-blacklist').value = settings_advanced.blacklist_domains.join("\n");
   document.getElementById('domains-whitelist').value = settings_advanced.whitelist_domains.join("\n");
+  document.getElementById('usage-statistics').checked = settings_advanced.usage_statistics;
 });
 document.getElementById('advanced-settings-form').addEventListener('submit', saveAdvancedSettings);
+document.getElementById('usage-statistics').addEventListener('change', function() {
+  var thankyou = this.parentNode.querySelector('.success-icon');
+  if (this.checked === true) {
+    thankyou.classList.remove('hidden');
+  } else {
+    thankyou.classList.add('hidden');
+  }
+});
+ga('settings', 'ready');

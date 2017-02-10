@@ -65,6 +65,7 @@ function createTooltip() {
   tooltip.id = namespace + 'tooltip';
   tooltip.innerHTML = `<span class="${namespace}content"></span>`;
   document.body.append(tooltip);
+  ga('tooltip', 'ready', base_currency);
 }
 
 function showTooltip(ev) {
@@ -116,6 +117,7 @@ function showTooltip(ev) {
   tooltip.classList.remove(namespace + 'bottom');
   tooltip.classList.add(ttClass);
   tooltip.classList.add('visible');
+  ga('tooltip', 'show', base_currency);
 }
 function hideTooltip() {
   tooltip.classList.remove('visible');
@@ -330,6 +332,9 @@ function startTimeprices(cb) {
 
 startTimeprices(function() {
   loadSettings(function() {
+    if (settings_advanced.usage_statistics !== false) {
+      loadGoogleAnalytics();
+    }
     updateRates();
     listenForDomChanges();
     triggerDomChange();

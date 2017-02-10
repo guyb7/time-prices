@@ -54,7 +54,8 @@ var profiles = {
 };
 var default_settings_advanced = {
   blacklist_domains: ['salesforce.com', 'example.com'],
-  whitelist_domains: []
+  whitelist_domains: [],
+  usage_statistics: false
 };
 
 function loadSettings(cb) {
@@ -194,10 +195,32 @@ function updateRates(cb, force) {
           cb();
         }
       });
+      ga('settings', 'updateRates');
     } else {
       cb();
     }
   });
+}
+
+function loadGoogleAnalytics() {
+  chrome.runtime.sendMessage({ action: 'exec', payload: {
+    fn: 'loadGoogleAnalytics',
+    args: []
+  }});
+}
+function ga(eventCategory, eventAction, eventLabel, eventValue) {
+  if (settings_advanced.usage_statistics === false) {
+    return;
+  }
+  chrome.runtime.sendMessage({ action: 'exec', payload: {
+    fn: 'ga',
+    args: ['send', { hitType: 'event',
+      eventCategory: eventCategory,
+      eventAction: eventAction,
+      eventLabel: eventLabel,
+      eventValue: eventValue
+    }]
+  }});
 }
 
 function showEl(id) {
