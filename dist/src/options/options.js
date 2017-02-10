@@ -10,11 +10,13 @@ function saveSettings(e) {
       settings[name] = value;
     }
   });
-  chrome.storage.sync.set({'settings': settings}, function() {
-    showEl('settings-save-success');
-    window.setTimeout(function() {
-      hideEl('settings-save-success');
-    }, 5000);
+  chrome.storage.sync.set({ 'base_currency': document.getElementById('base_currency').value }, function() {
+    chrome.storage.sync.set({'settings': settings}, function() {
+      showEl('settings-save-success');
+      window.setTimeout(function() {
+        hideEl('settings-save-success');
+      }, 5000);
+    });
   });
   return false;
 }
@@ -26,6 +28,7 @@ function fillSettingsForm() {
       el.value = settings[name];
     }
   });
+  document.getElementById('base_currency').value = base_currency;
 }
 
 function removeEmptyElements(arr) {
@@ -109,6 +112,9 @@ function autoFill() {
   var partialSettings = {};
   inputsIterator(function(el) {
     var name = el.getAttribute('name');
+    if (name === 'base_currency') {
+      return;
+    }
     var value = parseInt(el.value.replace(/\..*/g, '').replace(/[^\d]/g, ''), 10);
     partialSettings[name] = isNaN(value) ? null : value;
   });
@@ -127,6 +133,7 @@ function loadProfile() {
   if (profiles[chosenProfile] !== undefined) {
     settings = profiles[chosenProfile];
     fillSettingsForm();
+    document.getElementById('base_currency').value = 'USD';
   }
 }
 

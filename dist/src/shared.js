@@ -1,5 +1,6 @@
 var settings;
 var settings_advanced;
+var base_currency = 'USD';
 var extension_id = 'cahhhfnkoamejaippijpiacpnhhniecb';
 var profiles = {
   empty: {
@@ -57,18 +58,23 @@ var default_settings_advanced = {
 };
 
 function loadSettings(cb) {
-  chrome.storage.sync.get('settings', function(storage) {
-    if (Object.keys(storage).length > 0) {
-      getAutoSettings(storage.settings, function(autoSettings) {
-        settings = autoSettings;
-        if (cb) {
-          cb(settings);
-        }
-      });
-    } else {
-      settings = profiles.default;
-      cb(settings);
+  chrome.storage.sync.get('base_currency', function(storage) {
+    if (storage.base_currency) {
+      base_currency = storage.base_currency;
     }
+    chrome.storage.sync.get('settings', function(storage) {
+      if (Object.keys(storage).length > 0) {
+        getAutoSettings(storage.settings, function(autoSettings) {
+          settings = autoSettings;
+          if (cb) {
+            cb(settings);
+          }
+        });
+      } else {
+        settings = profiles.default;
+        cb(settings);
+      }
+    });
   });
 }
 
@@ -165,6 +171,7 @@ function updateRates(cb, force) {
   }
   chrome.storage.sync.get('rates', function(storage) {
     if (storage.rates && storage.rates.rates) {
+      storage.rates.rates.USD = 1;
       rates = storage.rates.rates;
       rates_last = storage.rates.rates;
     }
@@ -174,6 +181,7 @@ function updateRates(cb, force) {
     if (force || Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 86400)) {
       fetchJSONFile(rates_json_url, function(data) {
         if (data.rates && Object.keys(data.rates).length > 0) {
+          data.rates.USD = 1;
           rates = data.rates;
           var new_rates = {
             last_check: Math.floor(Date.now() / 1000),

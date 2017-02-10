@@ -168,8 +168,14 @@ var re_function = function(original, sign, amount, cents, kilo) {
         break;
     }
   }
+  var amount_in_base_currency;
+  if (getCurrencyFromSign(sign) === base_currency) {
+    amount_in_base_currency = amount;
+  } else {
+    amount_in_base_currency = convertCurrency(amount, getCurrencyFromSign(sign))
+  }
   return {
-    usd: (sign === '$' ? amount : (convertCurrency(amount, getCurrencyFromSign(sign)))),
+    usd: amount_in_base_currency,
     original: original
   };
 };
@@ -288,12 +294,12 @@ function triggerDomChange() {
 }
 
 // https://api.fixer.io/latest?base=USD&symbols=GBP,EUR,JPY
-var rates = { EUR: 0.93765, GBP: 0.79995, JPY: 111.95 };
+var rates = { USD: 1, EUR: 0.94082, GBP: 0.80243, JPY: 113.51 };
 var rates_last_check = null;
 
 function convertCurrency(amount, to) {
   if (rates[to]) {
-    return amount * (1 / rates[to]);
+    return amount * (rates[base_currency] / rates[to]);
   } else {
     return null;
   }

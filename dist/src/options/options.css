@@ -111,7 +111,7 @@ h3 {
   padding: 2em 1em 0;
 }
 
-.post {
+.posts, .footer {
   max-width: 600px;
   padding-bottom: 2em;
 }
@@ -182,6 +182,12 @@ h3 {
 }
 .text-bold {
   font-weight: bold;
+}
+.info-text {
+  border-left: 3px solid #5d95ca;
+  color: #5d95ca;
+  padding: 5px 10px;
+  margin: 20px 0;
 }
 
 .hidden-mobile, .hidden {
