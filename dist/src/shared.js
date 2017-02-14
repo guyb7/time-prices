@@ -53,7 +53,7 @@ var profiles = {
   }
 };
 var default_settings_advanced = {
-  blacklist_domains: ['salesforce.com', 'example.com'],
+  blacklist_domains: ['salesforce.com', 'youneedabudget.com'],
   whitelist_domains: [],
   usage_statistics: false
 };
@@ -178,7 +178,7 @@ function updateRates(cb, force) {
     if (storage.rates && storage.rates.last_check) {
       rates_last_check = storage.rates.last_check;
     }
-    if (force || Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 10)) {
+    if (force || Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 86400)) {
       chrome.runtime.sendMessage({ action: 'exec', payload: {
         fn: 'loadExchangeRates',
         args: []
