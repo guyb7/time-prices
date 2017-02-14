@@ -165,7 +165,6 @@ function getAutoSettings(partialSettings, cb) {
   cb(autoSettings);
 }
 
-var rates_json_url = 'https://api.fixer.io/latest?base=USD&symbols=GBP,EUR,JPY';
 function updateRates(cb, force) {
   if (!cb) {
     cb = function(){};
@@ -179,26 +178,15 @@ function updateRates(cb, force) {
     if (storage.rates && storage.rates.last_check) {
       rates_last_check = storage.rates.last_check;
     }
-    if (force || Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 86400)) {
-      fetchJSONFile(rates_json_url, function(data) {
-        if (data.rates && Object.keys(data.rates).length > 0) {
-          data.rates.USD = 1;
-          rates = data.rates;
-          var new_rates = {
-            last_check: Math.floor(Date.now() / 1000),
-            rates: data.rates
-          };
-          rates_last_check = new_rates.last_check;
-          chrome.storage.sync.set({ 'rates': new_rates });
-          cb();
-        } else {
-          cb();
-        }
-      });
+    if (force || Object.keys(storage).length === 0 || !storage.rates || !storage.rates.rates || !storage.rates.last_check || (Math.floor(Date.now() / 1000) - storage.rates.last_check > 10)) {
+      chrome.runtime.sendMessage({ action: 'exec', payload: {
+        fn: 'loadExchangeRates',
+        args: []
+      }});
+      window.setTimeout(cb, 500);
       ga('settings', 'updateRates');
-    } else {
-      cb();
     }
+    cb();
   });
 }
 
@@ -228,20 +216,6 @@ function showEl(id) {
 }
 function hideEl(id) {
   document.getElementById(id).classList.add('hidden');
-}
-
-function fetchJSONFile(path, callback) {
-  var httpRequest = new XMLHttpRequest();
-  httpRequest.onreadystatechange = function() {
-    if (httpRequest.readyState === 4) {
-      if (httpRequest.status === 200) {
-        var data = JSON.parse(httpRequest.responseText);
-        if (callback) callback(data);
-      }
-    }
-  };
-  httpRequest.open('GET', path);
-  httpRequest.send(); 
 }
 
 function debounce(func, wait, immediate) {
