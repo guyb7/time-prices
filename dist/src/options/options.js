@@ -5,7 +5,8 @@ function saveSettings(e) {
   inputsIterator(function(el) {
     var name = el.getAttribute('name');
     if (settings[name] !== undefined) {
-      var value = parseInt(el.value.replace(/\..*/g, '').replace(/[^\d]/g, ''), 10);
+      var value = parseFloat(el.value, 10);
+      // var value = parseInt(el.value.replace(/\..*/g, '').replace(/[^\d]/g, ''), 10);
       el.value = isNaN(value) ? '' : value;
       settings[name] = value;
     }
@@ -115,17 +116,25 @@ function autoFill() {
   var partialSettings = {};
   inputsIterator(function(el) {
     var name = el.getAttribute('name');
+    var value;
     if (name === 'base_currency') {
       return;
+    } else if (name === 'usd_per_hour') {
+      value = parseFloat(el.value, 10);
+    } else {
+      value = parseInt(el.value.replace(/\..*/g, '').replace(/[^\d]/g, ''), 10);
     }
-    var value = parseInt(el.value.replace(/\..*/g, '').replace(/[^\d]/g, ''), 10);
     partialSettings[name] = isNaN(value) ? null : value;
   });
   getAutoSettings(partialSettings, function(autoSettings) {
     inputsIterator(function(el) {
       var name = el.getAttribute('name');
       if (autoSettings[name] !== undefined) {
-        el.value = Math.round(autoSettings[name]);
+        if (name === 'usd_per_hour') {
+          el.value = autoSettings[name];
+        } else {
+          el.value = Math.round(autoSettings[name]);
+        }
       }
     });
   });

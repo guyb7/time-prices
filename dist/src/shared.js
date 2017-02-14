@@ -159,7 +159,12 @@ function getAutoSettings(partialSettings, cb) {
     }
   }
   for (var k in autoSettings) {
-    autoSettings[k] = Math.max(Math.round(autoSettings[k]), 1);
+    if (k === 'usd_per_hour') {
+      // Round hourly rate to nearest 1 decimal place
+      autoSettings[k] = Math.max(Math.round(autoSettings[k] * 10) / 10, 1);
+    } else {
+      autoSettings[k] = Math.max(Math.round(autoSettings[k]), 1);
+    }
   }
   autoSettings.usd_per_minute = autoSettings.usd_per_hour / 60;
   cb(autoSettings);
@@ -197,7 +202,7 @@ function loadGoogleAnalytics() {
   }});
 }
 function ga(eventCategory, eventAction, eventLabel, eventValue) {
-  if (settings_advanced.usage_statistics === false) {
+  if (settings_advanced && settings_advanced.usage_statistics === false) {
     return;
   }
   chrome.runtime.sendMessage({ action: 'exec', payload: {
