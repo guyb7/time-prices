@@ -5,7 +5,7 @@ function getAllElements(addedNodes) {
   for (var i = 0; i < addedNodes.length; i++) {
     elements.push(addedNodes[i]);
     if (addedNodes[i].nodeType === 1) {
-      var children = addedNodes[i].querySelectorAll('*');
+      var children = addedNodes[i].querySelectorAll(':not(textarea):not([type=text])');
       for (var j = 0; j < children.length; j++) {
         elements.push(children[j]);
       }

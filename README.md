@@ -18,8 +18,14 @@ Search the [issues](https://github.com/guyb7/time-prices/issues) and create a ne
 
 ## Development
 * Clone this repo
-* Open `chrome://extensions/` in your Chrome
+* Open [chrome://extensions/](chrome://extensions/) in your Chrome
 * Enable `Developer mode`
-* Click on `Load unpacked extension...` and browse to the `dist` directory path under the repo
+* Click on `Load unpacked extension...` and browse to the `dist/` directory path under the repo
 
-At the moment there are no tests and no build. Edit the source files directly under the `dist` directory.
+At the moment there are no tests and no build. Edit the source files directly under the `dist/` directory.
+
+## Publish
+* Make sure to bump the version in `/dist/manifest.json`
+* Create a zip file with the contents of the `dist/` directory
+* Go to [Chrome Developer Dashboard](https://chrome.google.com/webstore/developer/dashboard)
+* Upload the zip package and click on Publish Changes
