@@ -1,8 +1,9 @@
 {
   "name": "TimePrices",
-  "version": "0.3.2",
+  "short_name": "TimePrices",
+  "version": "0.3.3",
   "manifest_version": 2,
-  "description": "Shows prices in terms of the time it will take you to earn it",
+  "description": "Shows a tooltip when hovering over prices with the time that will take you to earn that amount.",
   "homepage_url": "https://github.com/guyb7/time-prices",
   "icons": {
     "16": "icons/icon16.png",
